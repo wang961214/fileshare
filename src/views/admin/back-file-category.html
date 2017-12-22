@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
     <title>-后台内容</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
+     crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
+     crossorigin="anonymous">
     <link rel="stylesheet" href="/css/back-file.css" class="css">
 </head>
 
@@ -30,33 +30,33 @@
                 <div class="collapse navbar-collapse" id="admins">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="back-user.html">
+                            <a href="/admin/users">
                                 <span class="glyphicon glyphicon-user"></span> 用户管理</a>
                         </li>
                         <li class="active">
-                            <a href="">
+                            <a href="/admin/file/category">
                                 <span class="glyphicon glyphicon-list-alt"></span> 文件管理</a>
                         </li>
                         <li>
-                            <a href="back-count.html">
+                            <a href="/admin/sites">
                                 <span class="glyphicon glyphicon-signal"></span> 网站数据统计</a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="name">
-                                admin
+                                {{admin}}
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="manager-setting.html">
+                                    <a href="/admin/update">
                                         <span class="glyphicon glyphicon-cog"></span> 个人设置</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a id="logout">
+                            <a id="logout" href="/admin/login">
                                 <span class="glyphicon glyphicon-off"></span> 退出</a>
                         </li>
                     </ul>
@@ -97,25 +97,28 @@
                     <!-- 文件分类 -->
                     <div class="tab-pane active clearfix" id="guan">
                         <!-- 分类详情 -->
-                        <ul class="nav nav-tabs">
+                        <ul class="nav nav-tabs filetype">
                             <li class="active">
-                                <a href="#doc" data-toggle="tab">文档</a>
+                                <a href="#" data-toggle="tab" data-type='all'>全部</a>
+                            </li>
+                            <li >
+                                <a href="#doc" data-toggle="tab" data-type='doc'>文档</a>
                             </li>
                             <li>
-                                <a href="#vid" data-toggle="tab">视频</a>
+                                <a href="#vid" data-toggle="tab" data-type='video'>视频</a>
                             </li>
                             <li>
-                                <a href="#Img" data-toggle="tab">图片</a>
+                                <a href="#Img" data-toggle="tab" data-type='image'>图片</a>
                             </li>
                             <li>
-                                <a href="#Zip" data-toggle="tab">压缩文件</a>
+                                <a href="#Zip" data-toggle="tab" data-type='zip'>压缩文件</a>
                             </li>
                             <li>
-                                <a href="#Other" data-toggle="tab">其他文件</a>
+                                <a href="#" data-toggle="tab" data-type='other'>其他</a>
                             </li>
                         </ul>
                         <!-- 分类列表 -->
-                        <div class="tab-content">
+                        <div class="tab-content" id="cate">
                             <div class="tab-pane active" id="doc">
                                 <table id="document" class="table">
                                     <thead>
@@ -129,21 +132,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>
-                                                <a href="#">file</a>
-                                            </td>
-                                            <td>txt</td>
-                                            <td>1.2k</td>
-                                            <td>10</td>
-                                            <td>
-                                                <a href="#">删除</a> |
-                                                <a href="#">修改</a>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
+                                <!-- 分页 -->
+                                <ul class="pagination p-c pull-right">
+                                </ul>
                             </div>
                             <div class="tab-pane" id="vid">
                                 <table id="video" class="table">
@@ -158,21 +151,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>
-                                                <a href="#">file</a>
-                                            </td>
-                                            <td>txt</td>
-                                            <td>1.2k</td>
-                                            <td>10</td>
-                                            <td>
-                                                <a href="#">删除</a> |
-                                                <a href="#">修改</a>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
+                                <!-- 分页 -->
+                                <ul class="pagination p-c pull-right">
+                                </ul>
                             </div>
                             <div class="tab-pane" id="Img">
                                 <table id="img" class="table">
@@ -187,21 +170,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>
-                                                <a href="#">file</a>
-                                            </td>
-                                            <td>txt</td>
-                                            <td>1.2k</td>
-                                            <td>10</td>
-                                            <td>
-                                                <a href="#">删除</a> |
-                                                <a href="#">修改</a>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
+                                <!-- 分页 -->
+                                <ul class="pagination p-c pull-right">
+                                </ul>
                             </div>
                             <div class="tab-pane" id="Zip">
                                 <table id="zip" class="table">
@@ -216,21 +189,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>
-                                                <a href="#">file</a>
-                                            </td>
-                                            <td>txt</td>
-                                            <td>1.2k</td>
-                                            <td>10</td>
-                                            <td>
-                                                <a href="#">删除</a> |
-                                                <a href="#">修改</a>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
+                                <!-- 分页 -->
+                                <ul class="pagination p-c pull-right">
+                                </ul>
                             </div>
                             <div class="tab-pane" id="Other">
                                 <table id="other" class="table">
@@ -245,57 +208,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>
-                                                <a href="#">file</a>
-                                            </td>
-                                            <td>txt</td>
-                                            <td>1.2k</td>
-                                            <td>10</td>
-                                            <td>
-                                                <a href="#">删除</a> |
-                                                <a href="#">修改</a>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
+                                <!-- 分页 -->
+                                <ul class="pagination p-c pull-right">
+                                </ul>
                             </div>
                         </div>
-                        <!-- 分页 -->
-                        <ul class="pagination pull-right">
-                            <li>
-                                <a href="#">&laquo;</a>
-                            </li>
-                            <li class="active">
-                                <a href="#">1</a>
-                            </li>
-                            <li>
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">4</a>
-                            </li>
-                            <li>
-                                <a href="#">5</a>
-                            </li>
-                            <li>
-                                <a href="#">&raquo;</a>
-                            </li>
-                        </ul>
                     </div>
                     <!--文件审核 -->
                     <div class="tab-pane" id="adds">
                         <table class="table">
                             <thead>
                                 <tr>
+                                    <td>文件id</td>
                                     <td>文件名</td>
+                                    <td>文件大小</td>
                                     <td>文件类型</td>
-                                    <td>上传者</td>
-                                    <td>上传时间</td>
                                     <td>审核状态</td>
                                 </tr>
                             </thead>
@@ -316,6 +245,11 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+    <script src="/js/readUserFiles.js"></script>
+    <script src="/js/checkFiles.js"></script>
+    <script>
+        getMessage('.filetype');
+    </script>
 </body>
 
 </html>

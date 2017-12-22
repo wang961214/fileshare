@@ -27,33 +27,33 @@
                 <div class="collapse navbar-collapse" id="admins">
                     <ul class="nav navbar-nav">
                         <li class="active">
-                            <a href="">
+                            <a href="/admin/users">
                                 <span class="glyphicon glyphicon-user"></span> 用户管理</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/admin/file/category">
                                 <span class="glyphicon glyphicon-list-alt"></span> 文件管理</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/admin/sites">
                                 <span class="glyphicon glyphicon-signal"></span> 网站数据统计</a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="name">
-                                admin
+                                {{admin}}
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="manager-setting.html">
+                                    <a href="/admin/update">
                                         <span class="glyphicon glyphicon-cog"></span> 个人设置</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a id="logout">
+                            <a id="logout" href="/admin/login">
                                 <span class="glyphicon glyphicon-off"></span> 退出</a>
                         </li>
                     </ul>
@@ -116,21 +116,23 @@
                                 <label for="username" class="control-label">用户名:</label>
                                 <input type="text" class="form-control" placeholder="请输入用户名" id="username" required="required">
                             </div>
-                            <div class="form-group">
-                                <label for="UID" class="control-label">UID:</label>
-                                <input type="text" class="form-control" placeholder="输入用户ID" id="UID" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label for="groups" class="control-label">选择用户组</label>
-                                <select name="" id="groups" class="form-control">
-                                    <option value="1">限制会员</option>
-                                    <option value="2">非限制会员</option>
-                                    <option value="3">大会员</option>
-                                    <option value="4">SVIP</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-default">提交</button>
+                            
+                            
+                            <input type="button" class="btn btn-default" value="提交" id='submit'>
                         </form>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>用户ID</td>
+                                    <td>用户名</td>
+                                    <td>邮箱</td>
+                                    <td>注册日期</td>
+                                    <td>操作</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -141,7 +143,13 @@
     </footer>
     <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="/js/getUsers.js"></script>
+    <script src="/js/newTr.js"></script>
+    <script src="/js/newUl.js"></script>
+    <script src="/js/newPages.js"></script>
+    <script src="/js/resetPwd.js"></script>
+    <script src="/js/deleUser.js"></script>
+    <script src="/js/searchUser.js"></script>
+    
 
    
 </body>
